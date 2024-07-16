@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="angular.js"></script>
+    <script src="repeat.js"></script>
+    <script src="bootstrap"></script>
+</head>
+<body ng-app="app">
+    <div ng-controller="repeatController">
+       <table>
+           <tr ng-repeat="employee in emp">
+               <td>
+                   {{employee.lastName}}
+               </td>
+           </tr>
+       </table>
+        
+    </div>
+</body>
+</html>
