@@ -27,8 +27,8 @@
 <body ng-app="app">
     <div ng-controller="Handle">
         <table>
-            <thead style="cursor:pointer">
-                <tr>
+            <thead>
+                <tr style="cursor:pointer">
                     <td ng-click="sortData('name')">LESSON<div ng-class="getSortClass('name')"></div></td>
                     <td >Like </td>
                     <td >Dislike </td>
@@ -42,7 +42,7 @@
                 <td>{{lesson.dislike}}</td>
                 <td>
                     <button ng-click="increaseLike(lesson)">Like</button>
-                    <button ng-click="increaseDisLike(lesson)">Dislike</button>
+                    <button ng-click="increaseDislike(lesson)">Dislike</button>
                 </td>
                 <td>{{lesson.status}}</td>
             </tr>

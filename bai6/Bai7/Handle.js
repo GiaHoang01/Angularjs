@@ -16,7 +16,7 @@
             lesson.like++;
         }
         $scope.increaseDislike = function (lesson) {
-            lesson.Dislike++;
+            lesson.dislike++;
         }
 
         $scope.sortColumn = 'name';
