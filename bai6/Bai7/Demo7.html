@@ -5,22 +5,41 @@
     <script src="../angular.js"></script>
     <script src="Handle.js"></script>
     <title></title>
+    <style>
+        .arrow-up {
+            width: 0;
+            height: 0;
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+            border-bottom: 10px solid black;
+            display: inline-block;
+        }
+        .arrow-down {
+            width: 0;
+            height: 0;
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+            border-top: 10px solid black;
+            display: inline-block;
+        }
+    </style>
 </head>
 <body ng-app="app">
     <div ng-controller="Handle">
-        <input type="number" ng-model="limitrow"/>
         <table>
-            <tr>
-                <td>LESSON</td>
-                <td>Like</td>
-                <td>Dislike</td>
-                <td>Status</td>
-                <td>Status</td>
-            </tr>
-            <tr ng-repeat="lesson in listLanguages | limitTo:limitrow">
-                <td>{{lesson.Name}}</td>
-                <td>{{lesson.Like}}</td>
-                <td>{{lesson.Dislike}}</td>
+            <thead style="cursor:pointer">
+                <tr>
+                    <td ng-click="sortData('name')">LESSON<div ng-class="getSortClass('name')"></div></td>
+                    <td >Like </td>
+                    <td >Dislike </td>
+                    <td>Button</td>
+                    <td>Status</td>
+                </tr>
+            </thead>
+            <tr ng-repeat="lesson in listLanguages | orderBy:sortColumn:reverse">
+                <td>{{lesson.name}}</td>
+                <td>{{lesson.like}}</td>
+                <td>{{lesson.dislike}}</td>
                 <td>
                     <button ng-click="increaseLike(lesson)">Like</button>
                     <button ng-click="increaseDisLike(lesson)">Dislike</button>
